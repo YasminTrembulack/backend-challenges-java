@@ -1,7 +1,7 @@
 package com.bosch.example.services;
 
-import com.bosch.example.dto.ResultImaginaryExp;
+import com.bosch.example.dto.ImaginaryExpResult;
 
 public interface ImaginaryExpService {
-    ResultImaginaryExp calculate(Double A, Double b);
+    ImaginaryExpResult calculate(Double A, Double b);
 }
