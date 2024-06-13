@@ -5,20 +5,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bosch.example.model.City;
-import com.bosch.example.services.CitiesService;
+import com.bosch.example.repositories.CityJPARepository;
+import com.bosch.example.services.CityService;
 
-public class DatabaseCity implements CitiesService{
+public class DatabaseCity implements CityService{
 
     @Autowired
-    CitiesService repo;
+    CityJPARepository repo;
 
     @Override
-    public List<City> findByCity(String search ){
-        return repo.findByCity(search);
+    public List<City> findByName(String search ){
+        return repo.findByName(search);
     };
 
     @Override
     public List<City> getAllCities(){
-        return repo.getAllCities();
+        return repo.findAll();
     };
 }

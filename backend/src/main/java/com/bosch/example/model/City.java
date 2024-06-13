@@ -17,11 +17,11 @@ public class City {
     @Column(name = "Country")
     private String country;
 
-    @Column(name = "City")
-    private String name;
-
-    @Column(name = "States")
+    @Column(name = "State")
     private String state;
+    
+    @Column(name = "name")
+    private String name;
 
     public Long getId() {
         return Id;

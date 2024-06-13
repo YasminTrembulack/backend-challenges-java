@@ -8,7 +8,7 @@ import com.bosch.example.impl.DatabaseCity;
 import com.bosch.example.impl.DefaultCollatz;
 import com.bosch.example.impl.DefaultImaginaryExp;
 import com.bosch.example.impl.DefaultPalindrome;
-import com.bosch.example.services.CitiesService;
+import com.bosch.example.services.CityService;
 import com.bosch.example.services.CollatzService;
 import com.bosch.example.services.ImaginaryExpService;
 import com.bosch.example.services.PalindromeService;
@@ -37,7 +37,7 @@ public class DependenciesConfiguration {
 
     @Bean
     @Scope("singleton")
-    public CitiesService citiesService(){
+    public CityService citiesService(){
         return new DatabaseCity();      
     }
 }
