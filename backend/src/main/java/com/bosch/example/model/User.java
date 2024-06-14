@@ -14,11 +14,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "UserName")
+    @Column(name = "Username")
     private String username;
 
-    @Column(name = "Country")
-    private String country;
+    @Column(name = "Email")
+    private String email;
+
+    @Column(name = "Password")
+    private String password;
 
     public Long getId() {
         return Id;
@@ -36,11 +39,21 @@ public class User {
         this.username = username;
     }
 
-    public String getCountry() {
-        return country;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setEmail(String email) {
+        this.email = email;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    
 }

@@ -8,4 +8,5 @@ import com.bosch.example.model.User;
 @Repository
 public interface UserJPARepository 
     extends JpaRepository<User, Long>{
+    
 }

@@ -20,7 +20,7 @@ public class City {
     @Column(name = "State")
     private String state;
     
-    @Column(name = "name")
+    @Column(name = "Name")
     private String name;
 
     public Long getId() {
@@ -39,19 +39,22 @@ public class City {
         this.country = country;
     }
 
-    public String getCity() {
-        return name;
-    }
-
-    public void setCity(String city) {
-        this.name = city;
-    }
-
-    public String getStates() {
+    public String getState() {
         return state;
     }
 
-    public void setStates(String states) {
-        this.state = states;
+    public void setState(String state) {
+        this.state = state;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
 }
