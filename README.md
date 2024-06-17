@@ -1,1 +1,1 @@
-# backend-challenges
+# backend-training

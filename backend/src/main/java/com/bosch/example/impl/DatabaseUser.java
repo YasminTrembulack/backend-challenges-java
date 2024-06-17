@@ -11,19 +11,25 @@ public class DatabaseUser implements UserService {
     @Autowired
     UserJPARepository repo;
 
-    @Override
-    public String save(User user) {
-        if (user.getUsername() == null) {
-            return "Username NULL";
-        } else if (user.getEmail() == null) {
-            return "Email NULL";
-        } else if (user.getPassword() == null) {
-            return "Password NULL";
-        }
-        
-
+    public void save(User user) {
         repo.save(user);
+    }
 
-        return "Usuário criado com sucesso!";
+    @Override
+    public User loginByUsername(String username) {
+        var users = repo.findByUsername(username);
+        if (users.size() == 0)
+            return null;
+        
+        return users.get(0);
+    }
+
+    @Override
+    public User loginByEmail(String email) {
+        var users = repo.findByEmail(email);
+        if (users.size() == 0)
+            return null;
+        
+        return users.get(0);
     }
 }
