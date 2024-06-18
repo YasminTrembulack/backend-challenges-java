@@ -6,4 +6,5 @@ public interface UserService {
     void save(User user);
     User loginByUsername(String username);
     User loginByEmail(String email);
+    User getOne(Long id);
 }

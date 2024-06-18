@@ -32,4 +32,9 @@ public class DatabaseUser implements UserService {
         
         return users.get(0);
     }
+
+    @Override
+    public User getOne(Long id) {
+        return repo.getOne(id);
+    }
 }

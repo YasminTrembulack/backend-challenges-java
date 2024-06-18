@@ -9,8 +9,6 @@ public class DefaultImaginaryExp implements ImaginaryExpService{
     public ImaginaryExpResult calculate(Double A, Double b) {
         Double re = A * (Math.sin(b));
         Double im = A * (Math.cos(b));
-        System.out.println(re);
-        System.out.println(im);
         return new ImaginaryExpResult(re, im);
     }
 

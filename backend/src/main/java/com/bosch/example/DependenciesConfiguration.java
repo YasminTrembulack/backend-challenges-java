@@ -13,31 +13,34 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.client.RestTemplate;
 
 import com.bosch.example.impl.DatabaseCity;
+import com.bosch.example.impl.DatabaseProduct;
 import com.bosch.example.impl.DatabaseUser;
 import com.bosch.example.impl.DefaultCPFValidator;
 import com.bosch.example.impl.DefaultCollatz;
 import com.bosch.example.impl.DefaultEmailValidator;
 import com.bosch.example.impl.DefaultImaginaryExp;
-import com.bosch.example.impl.DefaultJWTService;
 import com.bosch.example.impl.DefaultPalindrome;
 import com.bosch.example.impl.DefaultPasswordValidate;
-import com.bosch.example.impl.RS256SignatureService;
-import com.bosch.example.impl.RSAKeyService;
-import com.bosch.example.impl.SHA256HashService;
-import com.bosch.example.impl.SHAPasswordEncoder;  
 import com.bosch.example.impl.ViaCEPCityValidator;
 import com.bosch.example.services.CPFValidatorService;
 import com.bosch.example.services.CityService;
 import com.bosch.example.services.CityValidatorService;
 import com.bosch.example.services.CollatzService;
 import com.bosch.example.services.EmailValidatorService;
-import com.bosch.example.services.HashService;
 import com.bosch.example.services.ImaginaryExpService;
-import com.bosch.example.services.KeyService;
 import com.bosch.example.services.PalindromeService;
 import com.bosch.example.services.PasswordValidatorService;
-import com.bosch.example.services.SignatureService;
+import com.bosch.example.services.ProductService;
 import com.bosch.example.services.UserService;
+import com.bosch.example.impl.DefaultJWTService;
+import com.bosch.example.services.HashService;
+import com.bosch.example.services.KeyService;
+import com.bosch.example.services.SignatureService;
+import com.bosch.example.impl.RS256SignatureService;
+import com.bosch.example.impl.RSAKeyService;
+import com.bosch.example.impl.SHA256HashService;
+// import com.bosch.example.impl.SHAPasswordEncoder;  
+
 
 @Configuration
 public class DependenciesConfiguration {
@@ -124,6 +127,12 @@ public class DependenciesConfiguration {
     @Scope("singleton")
     public UserService userService(){
         return new DatabaseUser();      
+    }
+
+    @Bean
+    @Scope("singleton")
+    public ProductService productService(){
+        return new DatabaseProduct();      
     }
 
     @Bean

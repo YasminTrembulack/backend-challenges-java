@@ -6,32 +6,29 @@ import java.security.NoSuchAlgorithmException;
 
 import com.bosch.example.services.KeyService;
 
-
-
 public class RSAKeyService implements KeyService {
     KeyPair pair = null;
 
     @Override
     public KeyPair getKeys() {
-        try
-        {
+        try {
             generate();
             return pair;
-        }
-        catch (Exception ex)
+
+        }catch (Exception ex)
         {
             ex.printStackTrace();
             return null;
         }
     }
 
-    void generate() throws NoSuchAlgorithmException 
-    {
-        if (pair != null)
-            return;
-
+    void generate() throws NoSuchAlgorithmException{
+        if (pair != null) 
+            return;    
+        
         var generator = KeyPairGenerator.getInstance("RSA");
         generator.initialize(2048);
         pair = generator.generateKeyPair();
     }
+    
 }
